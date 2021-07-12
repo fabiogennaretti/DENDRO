@@ -1,5 +1,5 @@
 ---
-title: 'Lab: Post-processing and statistics of dendrochronological series (solutions)'
+title: 'Lab: Post-processing and statistics of dendrochronological series'
 output:
   html_document:
     self_contained: no
