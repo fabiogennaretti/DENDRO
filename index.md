@@ -23,3 +23,11 @@ License][cc-by].
 1. [Crossdating](pdf/01-crossdating.pdf) - Data: [L18_TEST01.rwl](data/L18_TEST01.rwl); 
 [L18_TEST02.rwl](data/L18_TEST02.rwl); [L18_TEST03.rwl](data/L18_TEST03.rwl)
 
+2. Post-processing and statistics of dendrochronological series.
+
+      [Lecture](pdf/02-Post-processing_and_statistics.pdf)
+
+      [Exercise](R-code/02-Post-processing_and_statistics.html)
+
+
+
