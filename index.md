@@ -29,5 +29,13 @@ License][cc-by].
 
       [Exercise](R-code/02-Post-processing_and_statistics.html)
 
+3. Response functions and transfer functions
+
+      [Lecture](pdf/03-Response_transfer_functions.pdf)
+
+      [Exercise](R-code/03-Response_transfer_functions.html)
+      
+      
+
 
 
