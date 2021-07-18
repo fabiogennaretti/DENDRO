@@ -318,7 +318,7 @@ str(Pivot.SC.crn)</code></pre>
 Pivot.SC.crn=Pivot.SC.crn[row.names(Pivot.SC.crn) %in%  Cl$Year,]
 Cl=Cl[Cl$Year %in% row.names(Pivot.SC.crn),]</code></pre>
 <p>(2a). Use the function <em>dcc</em> of <strong>treeclim</strong> to perform, first, climate-growth correlation analysis (method = “correlation”), second, climate-growth response function analysis (method = “response”). The results can be visualized with the functions <em>summary</em>, <em>plot</em> and <em>barplot</em>. Comment the results and figures.</p>
-<p><img src="03-Response_transfer_functions_files/figure-html/unnamed-chunk-2-1.png" width="672" /><img src="03-Response_transfer_functions_files/figure-html/unnamed-chunk-2-2.png" width="672" /><img src="03-Response_transfer_functions_files/figure-html/unnamed-chunk-2-3.png" width="672" /><img src="03-Response_transfer_functions_files/figure-html/unnamed-chunk-2-4.png" width="672" /></p>
+<p><img src="04-Response_transfer_functions_files/figure-html/unnamed-chunk-2-1.png" width="672" /><img src="04-Response_transfer_functions_files/figure-html/unnamed-chunk-2-2.png" width="672" /><img src="04-Response_transfer_functions_files/figure-html/unnamed-chunk-2-3.png" width="672" /><img src="04-Response_transfer_functions_files/figure-html/unnamed-chunk-2-4.png" width="672" /></p>
 <p>(2b). Use the function <em>dlm</em> of <strong>treeclim</strong> to verify the adjustment of the response function obtained in step 2a. In step 2a, we see that the retained months of the response function analysis are previous September, previous October, and current May, July and August. We can thus set <em>selection=c(-9,-10,5,7,8)</em> as an argument of the function. A summary is obtained with the function <em>summary</em>. What is the variance explained by the model?</p>
 <pre><code>## Running for timespan 1902 - 2016...</code></pre>
 <pre><code>## 
@@ -344,7 +344,7 @@ Cl=Cl[Cl$Year %in% row.names(Pivot.SC.crn),]</code></pre>
 ## Multiple R-squared:  0.567,  Adjusted R-squared:  0.5471 
 ## F-statistic: 28.54 on 5 and 109 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>(2c). Produce a scatterplot of observed tree-ring data (<em>YOUR_RESPONSE_LIST$truncated$tree</em>) versus predicted tree ring data by the response function model (<em>predict(YOUR_RESPONSE_MODEL)</em>). Comment on the plot.</p>
-<p><img src="03-Response_transfer_functions_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="04-Response_transfer_functions_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="transfer-function-analysis-linear-scaling" class="section level2">
 <h2>3. Transfer function analysis: Linear scaling</h2>
@@ -356,7 +356,7 @@ MyYear=Cl$Year</code></pre>
 <p>The linear scaling is the simplest transfer function method that transform tree-ring data to have same mean and SD of the climate data over the calibration period with the following formula:</p>
 <p><span class="math inline">\(REC_{i} = (TR_{i} - MeanTR_{cal}) * (SDClim_{cal}/SDTR_{cal}) + MeanClim_{cal}\)</span></p>
 <p>(3a). Recunstruct the 1901-2016 July-August mean temperature values based on the selected calibration period and on the linear scaling formula. Then, plot the results as shown here below (the black line is the tree-ring based reconstruction and the hatched area is the calibration period).</p>
-<p><img src="03-Response_transfer_functions_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="04-Response_transfer_functions_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>(3b) Compute the following statistics that may be used to assess the quality of a reconstruction:</p>
 <ul>
 <li><p>Correlation between the climate and the reconstruction over the full, the calibration and the verification period</p></li>

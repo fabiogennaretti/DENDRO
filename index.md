@@ -28,7 +28,7 @@ License][cc-by].
       
 2. Crossdating
 
-      [Lecture](pdf/02-crossdating.pdf)
+      [Lecture/Exercise](pdf/02-crossdating.pdf)
 
       Data: [L18_TEST01.rwl](data/L18_TEST01.rwl); [L18_TEST02.rwl](data/L18_TEST02.rwl); [L18_TEST03.rwl](data/L18_TEST03.rwl)
 
@@ -43,6 +43,8 @@ License][cc-by].
       [Lecture](pdf/04-Response_transfer_functions.pdf)
 
       [Exercise](R-code/04-Response_transfer_functions.html)
+      
+      Data: [Pivot.SC.crn.csv](data/Pivot.SC.crn.csv)
 
     
       

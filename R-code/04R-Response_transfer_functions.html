@@ -348,26 +348,26 @@ Cl=Cl[Cl$Year %in% row.names(Pivot.SC.crn),]</code></pre>
 ## 
 ## Coefficients:
 ##             id varname month  coef significant ci_lower ci_upper
-## X3.prev.jun  1      X3   Jun 0.287       FALSE   -0.042    0.480
-## X3.prev.jul  2      X3   Jul 0.374       FALSE   -0.067    0.628
-## X3.prev.aug  3      X3   Aug 0.373       FALSE   -0.125    0.630
-## X3.prev.sep  4      X3   Sep 0.459        TRUE    0.107    0.664
-## X3.prev.oct  5      X3   Oct 0.385        TRUE    0.142    0.573
-## X3.prev.nov  6      X3   Nov 0.301        TRUE    0.001    0.544
-## X3.prev.dec  7      X3   Dec 0.326        TRUE    0.008    0.507
-## X3.curr.jan  8      X3   JAN 0.248       FALSE   -0.008    0.446
-## X3.curr.feb  9      X3   FEB 0.191       FALSE   -0.017    0.361
-## X3.curr.mar 10      X3   MAR 0.180        TRUE    0.020    0.308
-## X3.curr.apr 11      X3   APR 0.301        TRUE    0.064    0.454
-## X3.curr.may 12      X3   MAY 0.430        TRUE    0.202    0.544
-## X3.curr.jun 13      X3   JUN 0.360        TRUE    0.027    0.606
-## X3.curr.jul 14      X3   JUL 0.571        TRUE    0.239    0.762
-## X3.curr.aug 15      X3   AUG 0.614        TRUE    0.279    0.783
-## X3.curr.sep 16      X3   SEP 0.342       FALSE   -0.045    0.637</code></pre>
+## X3.prev.jun  1      X3   Jun 0.279       FALSE   -0.053    0.481
+## X3.prev.jul  2      X3   Jul 0.363       FALSE   -0.086    0.622
+## X3.prev.aug  3      X3   Aug 0.369       FALSE   -0.143    0.616
+## X3.prev.sep  4      X3   Sep 0.447        TRUE    0.114    0.648
+## X3.prev.oct  5      X3   Oct 0.378        TRUE    0.134    0.565
+## X3.prev.nov  6      X3   Nov 0.294       FALSE   -0.020    0.536
+## X3.prev.dec  7      X3   Dec 0.320        TRUE    0.009    0.496
+## X3.curr.jan  8      X3   JAN 0.236        TRUE    0.008    0.431
+## X3.curr.feb  9      X3   FEB 0.179       FALSE   -0.038    0.352
+## X3.curr.mar 10      X3   MAR 0.175        TRUE    0.022    0.305
+## X3.curr.apr 11      X3   APR 0.294        TRUE    0.049    0.458
+## X3.curr.may 12      X3   MAY 0.428        TRUE    0.213    0.534
+## X3.curr.jun 13      X3   JUN 0.351        TRUE    0.017    0.597
+## X3.curr.jul 14      X3   JUL 0.561        TRUE    0.243    0.756
+## X3.curr.aug 15      X3   AUG 0.604        TRUE    0.265    0.777
+## X3.curr.sep 16      X3   SEP 0.345       FALSE   -0.040    0.607</code></pre>
 <pre class="r"><code>plot(Pivot.SC.crn.cor)</code></pre>
-<p><img src="03R-Response_transfer_functions_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="04R-Response_transfer_functions_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>barplot(Pivot.SC.crn.cor$coef$coef,col = Pivot.SC.crn.cor$coef$significant,names.arg = Pivot.SC.crn.cor$coef$month,las=2)</code></pre>
-<p><img src="03R-Response_transfer_functions_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<p><img src="04R-Response_transfer_functions_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
 <pre class="r"><code>Pivot.SC.crn.res=dcc(Pivot.SC.crn,Cl,method = &quot;response&quot;,dynamic = &quot;static&quot;)</code></pre>
 <pre><code>## Running for timespan 1902 - 2016...</code></pre>
 <pre class="r"><code>summary(Pivot.SC.crn.res)</code></pre>
@@ -397,27 +397,27 @@ Cl=Cl[Cl$Year %in% row.names(Pivot.SC.crn),]</code></pre>
 ## X3.curr.sep
 ## 
 ## Coefficients:
-##             id varname month   coef significant ci_lower ci_upper
-## X3.prev.jun  1      X3   Jun  0.003       FALSE   -0.115    0.082
-## X3.prev.jul  2      X3   Jul  0.022       FALSE   -0.083    0.104
-## X3.prev.aug  3      X3   Aug  0.073       FALSE   -0.125    0.148
-## X3.prev.sep  4      X3   Sep  0.163        TRUE    0.014    0.257
-## X3.prev.oct  5      X3   Oct  0.143        TRUE    0.042    0.250
-## X3.prev.nov  6      X3   Nov  0.063       FALSE   -0.068    0.199
-## X3.prev.dec  7      X3   Dec  0.033       FALSE   -0.097    0.126
-## X3.curr.jan  8      X3   JAN  0.069       FALSE   -0.088    0.186
-## X3.curr.feb  9      X3   FEB -0.003       FALSE   -0.129    0.128
-## X3.curr.mar 10      X3   MAR  0.049       FALSE   -0.044    0.159
-## X3.curr.apr 11      X3   APR  0.073       FALSE   -0.039    0.193
-## X3.curr.may 12      X3   MAY  0.130        TRUE    0.017    0.263
-## X3.curr.jun 13      X3   JUN  0.013       FALSE   -0.140    0.154
-## X3.curr.jul 14      X3   JUL  0.187        TRUE    0.093    0.259
-## X3.curr.aug 15      X3   AUG  0.212        TRUE    0.091    0.325
-## X3.curr.sep 16      X3   SEP  0.081       FALSE   -0.061    0.227</code></pre>
+##             id varname month  coef significant ci_lower ci_upper
+## X3.prev.jun  1      X3   Jun 0.000       FALSE   -0.127    0.085
+## X3.prev.jul  2      X3   Jul 0.023       FALSE   -0.074    0.105
+## X3.prev.aug  3      X3   Aug 0.074       FALSE   -0.114    0.157
+## X3.prev.sep  4      X3   Sep 0.163        TRUE    0.016    0.258
+## X3.prev.oct  5      X3   Oct 0.144        TRUE    0.036    0.249
+## X3.prev.nov  6      X3   Nov 0.061       FALSE   -0.054    0.220
+## X3.prev.dec  7      X3   Dec 0.026       FALSE   -0.119    0.136
+## X3.curr.jan  8      X3   JAN 0.067       FALSE   -0.091    0.190
+## X3.curr.feb  9      X3   FEB 0.004       FALSE   -0.118    0.132
+## X3.curr.mar 10      X3   MAR 0.049       FALSE   -0.052    0.168
+## X3.curr.apr 11      X3   APR 0.074       FALSE   -0.036    0.183
+## X3.curr.may 12      X3   MAY 0.128        TRUE    0.014    0.266
+## X3.curr.jun 13      X3   JUN 0.025       FALSE   -0.149    0.155
+## X3.curr.jul 14      X3   JUL 0.185        TRUE    0.098    0.260
+## X3.curr.aug 15      X3   AUG 0.211        TRUE    0.084    0.320
+## X3.curr.sep 16      X3   SEP 0.083       FALSE   -0.051    0.221</code></pre>
 <pre class="r"><code>plot(Pivot.SC.crn.res)</code></pre>
-<p><img src="03R-Response_transfer_functions_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+<p><img src="04R-Response_transfer_functions_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
 <pre class="r"><code>barplot(Pivot.SC.crn.res$coef$coef,col = Pivot.SC.crn.res$coef$significant,names.arg = Pivot.SC.crn.res$coef$month,las=2)</code></pre>
-<p><img src="03R-Response_transfer_functions_files/figure-html/unnamed-chunk-2-4.png" width="672" /></p>
+<p><img src="04R-Response_transfer_functions_files/figure-html/unnamed-chunk-2-4.png" width="672" /></p>
 <p>(2b). Use the function <em>dlm</em> of <strong>treeclim</strong> to verify the adjustment of the response function obtained in step 2a. In step 2a, we see that the retained months of the response function analysis are previous September, previous October, and current May, July and August. We can thus set <em>selection=c(-9,-10,5,7,8)</em> as an argument of the function. A summary is obtained with the function <em>summary</em>. What is the variance explained by the model?</p>
 <pre class="r"><code>Mylm2=dlm(Pivot.SC.crn,Cl,selection=c(-9,-10,5,7,8))</code></pre>
 <pre><code>## Running for timespan 1902 - 2016...</code></pre>
@@ -453,7 +453,7 @@ plot(Pivot.SC.crn.res$truncated$tree,predict(Mylm2),
      xlab=&quot;OBS&quot;,
      ylab=&quot;RESPONSE FUNCTION MODEL&quot;)
 lines(c(-100,100),c(-100,100))</code></pre>
-<p><img src="03R-Response_transfer_functions_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="04R-Response_transfer_functions_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="transfer-function-analysis-linear-scaling" class="section level2">
 <h2>3. Transfer function analysis: Linear scaling</h2>
@@ -477,7 +477,7 @@ lines(MyYear,jul_aug,col=2)
 xx &lt;- c(min(Calibration), min(Calibration), max(Calibration), max(Calibration))
 yy &lt;- c(-100, 100, 100, -100)
 polygon(xx, yy, col = &quot;grey80&quot;,density=40)</code></pre>
-<p><img src="03R-Response_transfer_functions_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="04R-Response_transfer_functions_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>(3b) Compute the following statistics that may be used to assess the quality of a reconstruction:</p>
 <ul>
 <li><p>Correlation between the climate and the reconstruction over the full, the calibration and the verification period</p></li>
