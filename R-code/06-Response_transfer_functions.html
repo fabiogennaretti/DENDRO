@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Lab: Response functions and transfer functions</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Lab: Response functions and transfer functions</h1>
+
+</div>
+
+
+<p><strong>During this exercise, we will recover climate data and we will practice with response and transfer functions in R.</strong></p>
+<p>We will download climate data from <strong>Climate Explorer</strong></p>
+<p>We will use the R package <strong>treeclim</strong>.</p>
+<div id="download-climate-data-from-climate-explorer" class="section level2">
+<h2>1. Download climate data from Climate Explorer</h2>
+<p>(1a). Go to Climate Explorer</p>
+<blockquote>
+<p><strong>Weblink</strong>: <a href="https://climexp.knmi.nl/start.cgi" class="uri">https://climexp.knmi.nl/start.cgi</a></p>
+</blockquote>
+<p>(1b). Select Monthly Observations</p>
+<p>(1c). Select CRU TS4.04 Mean Temperature : Land / 1901-2019: CRU TS 4.04 (land)</p>
+<p>(1d). Select the study region : ave_region:: lon= -73.000 -69.000, lat= 54.000 55.000</p>
+<p>(1e). Dowload raw data</p>
+</div>
+<div id="response-functions-with-the-package-treeclim" class="section level2">
+<h2>2. Response functions with the package <strong>treeclim</strong></h2>
+<p>We will start loading the required packages and the data, including the climate data we just extracted and a black spruce ring width chronology in the taiga of Quebec. We will use this chronology for our exercise. We also assure to have perfect consistency for the years of these training datasets.</p>
+<p>The ring width chronology can be found here: <a href="../data/Pivot.SC.crn.csv">Pivot.SC.crn.csv</a></p>
+<pre class="r"><code>library(treeclim)
+
+# Temperature data
+Cl=read.delim(&quot;../data/icru4_tmp_-73--69E_54-55N_n.dat&quot;,
+              skip = 24,header=F,
+              sep=&quot;&quot;)
+names(Cl)=c(&quot;Year&quot;,&quot;jan&quot;,&quot;feb&quot;,&quot;mar&quot;,&quot;apr&quot;,&quot;may&quot;,&quot;jun&quot;,&quot;jul&quot;,&quot;aug&quot;,&quot;sep&quot;,&quot;oct&quot;,&quot;nov&quot;,&quot;dec&quot;)
+row.names(Cl)=Cl$Year
+str(Cl)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    119 obs. of  13 variables:
+##  $ Year: int  1901 1902 1903 1904 1905 1906 1907 1908 1909 1910 ...
+##  $ jan : num  -24 -23.7 -23.3 -25.5 -26 ...
+##  $ feb : num  -22.9 -20.9 -22.2 -25.3 -24.1 ...
+##  $ mar : num  -18.1 -13.9 -15.3 -17.4 -17.3 ...
+##  $ apr : num  -6.27 -6.92 -8.07 -8.2 -7.54 ...
+##  $ may : num  1.677 -0.255 0.795 1.964 0.457 ...
+##  $ jun : num  8.61 6.56 7.91 8.28 7.59 ...
+##  $ jul : num  12.1 11.7 11.1 12.3 12.3 ...
+##  $ aug : num  11.08 10.48 9.31 10.38 10.22 ...
+##  $ sep : num  5.96 6.45 6.07 4.37 5.58 ...
+##  $ oct : num  -1.187 -1.75 -0.768 -1.406 -1.243 ...
+##  $ nov : num  -9.47 -8.16 -9.08 -9.51 -9.66 ...
+##  $ dec : num  -19.2 -21 -21.7 -21.8 -18.8 ...</code></pre>
+<pre class="r"><code># TR data
+Pivot.SC.crn=read.csv(&quot;../data/Pivot.SC.crn.csv&quot;,row.names = 1)
+str(Pivot.SC.crn)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    116 obs. of  2 variables:
+##  $ Pivot.SC.crn: num  1.055 1.047 1.05 1.066 0.921 ...
+##  $ samp.depth  : int  163 162 159 159 159 159 161 162 161 163 ...</code></pre>
+<pre class="r"><code># Assure year consistency
+Pivot.SC.crn=Pivot.SC.crn[row.names(Pivot.SC.crn) %in%  Cl$Year,]
+Cl=Cl[Cl$Year %in% row.names(Pivot.SC.crn),]</code></pre>
+<p>(2a). Use the function <em>dcc</em> of <strong>treeclim</strong> to perform, first, climate-growth correlation analysis (method = “correlation”), second, climate-growth response function analysis (method = “response”). The results can be visualized with the functions <em>summary</em>, <em>plot</em> and <em>barplot</em>. Comment the results and figures.</p>
+<p><img src="06-Response_transfer_functions_files/figure-html/unnamed-chunk-2-1.png" width="672" /><img src="06-Response_transfer_functions_files/figure-html/unnamed-chunk-2-2.png" width="672" /><img src="06-Response_transfer_functions_files/figure-html/unnamed-chunk-2-3.png" width="672" /><img src="06-Response_transfer_functions_files/figure-html/unnamed-chunk-2-4.png" width="672" /></p>
+<p>(2b). Use the function <em>dlm</em> of <strong>treeclim</strong> to verify the adjustment of the response function obtained in step 2a. In step 2a, we see that the retained months of the response function analysis are previous September, previous October, and current May, July and August. We can thus set <em>selection=c(-9,-10,5,7,8)</em> as an argument of the function. A summary is obtained with the function <em>summary</em>. What is the variance explained by the model?</p>
+<pre><code>## Running for timespan 1902 - 2016...</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = tree ~ ., data = design_df)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.27216 -0.09442 -0.00040  0.08847  0.33355 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -0.188490   0.207793  -0.907  0.36635    
+## X3.prev.sep  0.037857   0.014083   2.688  0.00831 ** 
+## X3.prev.oct  0.028073   0.010545   2.662  0.00894 ** 
+## X3.curr.may  0.026061   0.009958   2.617  0.01013 *  
+## X3.curr.jul  0.037569   0.019460   1.931  0.05614 .  
+## X3.curr.aug  0.064056   0.015297   4.188 5.74e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.1292 on 109 degrees of freedom
+## Multiple R-squared:  0.567,  Adjusted R-squared:  0.5471 
+## F-statistic: 28.54 on 5 and 109 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>(2c). Produce a scatterplot of observed tree-ring data (<em>YOUR_RESPONSE_LIST$truncated$tree</em>) versus predicted tree ring data by the response function model (<em>predict(YOUR_RESPONSE_MODEL)</em>). Comment on the plot.</p>
+<p><img src="06-Response_transfer_functions_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="transfer-function-analysis-linear-scaling" class="section level2">
+<h2>3. Transfer function analysis: Linear scaling</h2>
+<p>While a response function finds the optimal combination of climate variables to model tree-ring data, a transfer function predict a climate variable from tree ring data and may be used for a climate reconstruction. In this exercise we want to predict July-August mean temperature values from our tree ring data.</p>
+<pre class="r"><code>jul_aug=(Cl$jul+Cl$aug)/2
+MyYear=Cl$Year</code></pre>
+<p>A dendroclimatic reconstruction has always a training calibration period that it is used to define the transfer function. The transfer function is then applied over all years with tree-ring data to reconstruct the climate (even when no meteorological instrumental data are available). Let’s set a calibration period.</p>
+<pre class="r"><code>Calibration=1930:2016</code></pre>
+<p>The linear scaling is the simplest transfer function method that transform tree-ring data to have same mean and SD of the climate data over the calibration period with the following formula:</p>
+<p><span class="math inline">\(REC_{i} = (TR_{i} - MeanTR_{cal}) * (SDClim_{cal}/SDTR_{cal}) + MeanClim_{cal}\)</span></p>
+<p>(3a). Recunstruct the 1901-2016 July-August mean temperature values based on the selected calibration period and on the linear scaling formula. Then, plot the results as shown here below (the black line is the tree-ring based reconstruction and the hatched area is the calibration period).</p>
+<p><img src="06-Response_transfer_functions_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>(3b) Compute the following statistics that may be used to assess the quality of a reconstruction:</p>
+<ul>
+<li><p>Correlation between the climate and the reconstruction over the full, the calibration and the verification period</p></li>
+<li><p>The reduction of error</p>
+<p><span class="math inline">\(RE = 1 - \frac{\sum_{i = 1}^{n_{ver}}{(Clim_i-Rec_i)^2}}{\sum_{i = 1}^{n_{ver}}{(Clim_i-\bar{Clim_{cal}})^2}}\)</span></p></li>
+<li><p>The coefficient of efficiency</p>
+<p><span class="math inline">\(CE = 1 - \frac{\sum_{i = 1}^{n_{ver}}{(Clim_i-Rec_i)^2}}{\sum_{i = 1}^{n_{ver}}{(Clim_i-\bar{Clim_{ver}})^2}}\)</span></p></li>
+</ul>
+<pre><code>## [1] &quot;r full period = 0.6659785729123&quot;</code></pre>
+<pre><code>## [1] &quot;r calibration period = 0.619124385970409&quot;</code></pre>
+<pre><code>## [1] &quot;r verification period = 0.427930981691686&quot;</code></pre>
+<pre><code>## [1] &quot;RE = 0.0771152545556467&quot;</code></pre>
+<pre><code>## [1] &quot;CE = -1.52822739343748&quot;</code></pre>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

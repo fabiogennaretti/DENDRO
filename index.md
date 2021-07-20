@@ -18,36 +18,60 @@ License][cc-by].
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
-## Classes
+## Dendroweek
+
+[Course_plan](pdf/ECL7202_Dendroecologie_E21_FINAL.pdf)
+      
+## Themes
 
 1. Anatomy and morphology of growth rings
 
       [Lecture](pdf/01-Anatomy_and_morphology.pdf)
 
-      [Exercise](R-code/03-Response_transfer_functions.html) 
+      [Exercise - Steps 4 and 5 of this lab protocol](pdf/01-Protocole_lab.pdf) 
       
-2. Crossdating
+      [Video](https://www.youtube.com/watch?v=aBC6BR58zT4)
+      
+2. Dendrochronology and paleoecology
 
-      [Lecture/Exercise](pdf/02-crossdating.pdf)
+      [Lecture](pdf/02-Dendrochronology_and_paleoecology.pdf)
+      
+3. Dendroecological sampling
+      
+      [Lecture](pdf/03-Dendroecological_sampling.pdf)
+      
+4. Crossdating
+
+      [Lecture/Exercise](pdf/04-crossdating.pdf)
 
       Data: [L18_TEST01.rwl](data/L18_TEST01.rwl); [L18_TEST02.rwl](data/L18_TEST02.rwl); [L18_TEST03.rwl](data/L18_TEST03.rwl)
 
-3. Post-processing and statistics of dendrochronological series.
+5. Post-processing and statistics of dendrochronological series.
 
-      [Lecture](pdf/03-Post-processing_and_statistics.pdf)
+      [Lecture](pdf/05-Post-processing_and_statistics.pdf)
 
-      [Exercise](R-code/03-Post-processing_and_statistics.html)
+      [Exercise](R-code/05-Post-processing_and_statistics.html)
 
-4. Response functions and transfer functions
+6. Response functions and transfer functions
 
-      [Lecture](pdf/04-Response_transfer_functions.pdf)
+      [Lecture](pdf/06-Response_transfer_functions.pdf)
 
-      [Exercise](R-code/04-Response_transfer_functions.html)
+      [Exercise](R-code/06-Response_transfer_functions.html)
       
       Data: [Pivot.SC.crn.csv](data/Pivot.SC.crn.csv)
 
-    
+7. Applications of dendroecology    
       
+      [Lecture](pdf/07-Applications_of_dendroecology.pdf)
 
+8. Dendroecology at the intra annual scale    
+      
+      [Lecture](pdf/08-Dendroecology_at_the_intra-annual_scale.pdf)
+      
+9. Dendroecological models
 
+      [Lecture](pdf/09-Dendroecological_models.pdf)
+      
+## Conclusion
 
+[Questions always asked](pdf/Conclusion.pdf)
