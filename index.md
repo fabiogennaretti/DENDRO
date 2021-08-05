@@ -68,9 +68,9 @@ License][cc-by].
       
       [Lecture](pdf/08-Dendroecology_at_the_intra-annual_scale.pdf)
       
-      [Exercise]
+      [Exercise](R-code/08-dendrometers.html)
       
-      Data: 
+      Data: [Amos_sable_dendrometres_2.dat](dendrometer/Amos_sable_dendrometres_2.dat)
       
       [Cabling for dendrometers](dendrometer/NEW_dendrometer_to_data_logger.pdf)
       

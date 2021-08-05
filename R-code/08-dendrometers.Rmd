@@ -1,5 +1,5 @@
 ---
-title: 'Lab: Dendroecology at the intra annual scale: Dendrometers (solutions)'
+title: 'Lab: Dendroecology at the intra annual scale: Dendrometers'
 output:
   html_document:
     self_contained: no
