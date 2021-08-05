@@ -1,0 +1,104 @@
+---
+title: 'Lab: Dendroecology at the intra annual scale: Dendrometers (solutions)'
+output:
+  html_document:
+    self_contained: no
+    lib_dir: libs
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**During this exercise, we will read, plot and start to analyze dendrometer data.**
+
+We will use the package **fpp3**, **ggplot2**, **cowplot**.
+
+## Data
+
+We will start loading the required packages and the data.
+
+```{r, warning = FALSE, message = FALSE}
+library(fpp3)
+library(ggplot2)
+library(cowplot)
+dendro=read.delim("../dendrometer/Amos_sable_dendrometres_2.dat",skip = 3,sep = ",")
+dendro_names=read.delim("../dendrometer/Amos_sable_dendrometres_2.dat",skip = 1,nrows = 2,sep = ",")
+names(dendro)=names(dendro_names)
+rm(dendro_names)
+head(dendro)
+```
+
+## 1. Create a temporal data frame (tsibble)
+
+As a first step, you must transform the column containing the date by an usable date in R. Consult the following website to understand how to deal with date/time data in *R*: https://www.stat.berkeley.edu/~s133/dates.html. You can use the function *as.POSIXct*.
+
+A temporal data frame can be created with the function *as_tsibble* of the **tsibble** package. A temporal data frame has an index variable with inherent ordering from past to present.
+
+You can visualize the results with the function *head*, *plot(ts())* and *autoplot {ggplot2}*.
+
+```{r, warning = FALSE, message = FALSE, echo=FALSE}
+dendro$TIMESTAMP=as.POSIXct(dendro$TIMESTAMP)
+dendro = as_tsibble(dendro, index = TIMESTAMP)
+head(dendro)
+plot(ts(dendro[,5:14]))
+autoplot(dendro,SEVolt_Avg.2.)
+```
+
+## 2. Unit conversion
+
+Transform the raw data in milliVolt to millimeters. See the "Cabling for dendrometers" document:
+
+$mm = Vout/Vex * 11000 * 0.001$
+
+```{r, warning = FALSE, message = FALSE, echo=FALSE}
+dendro[,5:14]=dendro[,5:14]/2500*11000*0.001
+```
+
+## 3. Aggregation to daily values
+
+A temporal aggregation can be fast obtained using *index_by() + summarise()* of the **tsibble** package. For this step you can simply use the observation of only one dendrometer: **SEVolt_Avg.2.** 
+
+You can visualize the results with the function *head* and *autoplot {ggplot2}*.
+
+```{r, warning = FALSE, message = FALSE, echo=FALSE}
+dendro_daily <- index_by(dendro, day = as.Date(dendro$TIMESTAMP)) %>%
+  summarize(SEVolt_Avg.2. = mean(SEVolt_Avg.2.))
+head(dendro_daily)
+autoplot(dendro_daily,vars(SEVolt_Avg.2.))
+```
+
+# 4. Plot time-series and daily cycles
+
+Plot the time series of one dendrometer (**SEVolt_Avg.2.**) and of the internal datalogger temperature. Use *plot_grid {cowplot}* and *autoplot*
+
+Plot the daily cycle of the same dendrometer (**SEVolt_Avg.2.**) and of the internal datalogger temperature. Use *plot_grid {cowplot}* and *gg_season*.
+
+What do you deduce from these plots?
+
+```{r, warning = FALSE, message = FALSE, echo=FALSE}
+plot_grid(
+  autoplot(dendro, SEVolt_Avg.2.),
+  autoplot(dendro, PTemp_C_Avg),
+  ncol = 1, align = "v")
+
+plot_grid(gg_season(dendro, y = SEVolt_Avg.2., period="day"),
+          gg_season(dendro, y = PTemp_C_Avg, period="day"),
+          ncol = 1, align = "v")
+```          
+          
+# 5. Autocorrelation and the partial autocorrelation of the data
+
+Analyze the autocorrelation and the partial autocorrelation of the **SEVolt_Avg.2.** time series 
+
+What do you deduce from these plots? (1 point)
+
+```{r, warning = FALSE, message = FALSE, echo=FALSE}
+plot_grid(autoplot(ACF(dendro, SEVolt_Avg.2.)), autoplot(PACF(dendro, SEVolt_Avg.2.)))
+```  
+

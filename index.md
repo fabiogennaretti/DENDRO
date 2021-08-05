@@ -68,6 +68,14 @@ License][cc-by].
       
       [Lecture](pdf/08-Dendroecology_at_the_intra-annual_scale.pdf)
       
+      [Exercise]
+      
+      Data: 
+      
+      [Cabling for dendrometers](dendrometer/NEW_dendrometer_to_data_logger.pdf)
+      
+      CR basic code for dendrometer: [on second](dendrometer/My8Dendrometer_onsecond.CR1); [30 minutes interval](dendrometer/My8Dendrometer_30min.CR1)
+      
 9. Dendroecological models
 
       [Lecture](pdf/09-Dendroecological_models.pdf)
@@ -75,3 +83,4 @@ License][cc-by].
 ## Conclusion
 
 [Questions always asked](pdf/Conclusion.pdf)
+
