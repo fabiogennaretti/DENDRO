@@ -82,7 +82,7 @@ License][cc-by].
       
 ## Mini-Projects
 
-Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.jpg); [Environmental diversity](pdf/projects/SandSWEI_PCA.jpg)
+Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.JPG); [Environmental diversity](pdf/projects/SandSWEI_PCA.jpg)
       
 1. Stem analysis on jack pine (select tree with fire scar; living or death)
 
