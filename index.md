@@ -81,6 +81,8 @@ License][cc-by].
       [Lecture](pdf/09-Dendroecological_models.pdf)
       
 ## Mini-Projects
+
+[Authier Nord forest experimental site](pdf/projects/SandSWEI_PCA.jpg)
       
 1. Stem analysis on jack pine (select tree with fire scar; living or death)
 
