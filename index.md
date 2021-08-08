@@ -80,6 +80,20 @@ License][cc-by].
 
       [Lecture](pdf/09-Dendroecological_models.pdf)
       
+## Mini-Projects
+      
+1. Stem analysis on jack pine (select tree with fire scar; living or death)
+
+      [Reference: Autin et al. 2015](pdf/projects/Autin_2015.pdf)
+
+2. Productivity assessment of boreal forest
+
+      [Reference: Fradette et al. 2020](pdf/projects/Fradette_2020_forests-12-00059-v3.pdf)
+
+3. Climate sensitivity of boreal trees
+
+      [Reference: Chavardes et al. 2021](pdf/projects/Chavardes_FrontiersinPlantScience_2021.pdf)
+
 ## Conclusion
 
 [Questions always asked](pdf/Conclusion.pdf)
