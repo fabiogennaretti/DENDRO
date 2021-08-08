@@ -1,19 +1,19 @@
-'CR1000
-'Created by Short Cut (4.0)
+'CR1000X Series
+'Created by Short Cut (4.4)
 
 'Declare Variables and Units
 Public BattV
 Public PTemp_C
-Public DiffVolt(8)
-
-
+Public DiffVolt(4)
+Public Mult(4)={1,1,1,1}
+Public Offs(4)={0,0,0,0}
 
 Units BattV=Volts
 Units PTemp_C=Deg C
 Units DiffVolt=mV
 
 'Define Data Tables
-DataTable(test_fabio,True,-1)
+DataTable(Table1_test,True,-1)
 	DataInterval(0,1,Sec,10)
 	Average(1,BattV,FP2,False)
 	Average(1,PTemp_C,FP2,False)
@@ -21,27 +21,20 @@ DataTable(test_fabio,True,-1)
 	Average(1,DiffVolt(2),FP2,False)
 	Average(1,DiffVolt(3),FP2,False)
 	Average(1,DiffVolt(4),FP2,False)
-	Average(1,DiffVolt(5),FP2,False)
-	Average(1,DiffVolt(6),FP2,False)
-	Average(1,DiffVolt(7),FP2,False)
-	Average(1,DiffVolt(8),FP2,False)
 EndTable
 
 'Main Program
 BeginProg
 	'Main Scan
 	Scan(1,Sec,1,0)
-		'Default CR1000 Datalogger Battery Voltage measurement 'BattV'
+		'Default CR1000X Datalogger Battery Voltage measurement 'BattV'
 		Battery(BattV)
-		'Default CR1000 Datalogger Wiring Panel Temperature measurement 'PTemp_C'
-		PanelTemp(PTemp_C,_60Hz)
+		'Default CR1000X Datalogger Wiring Panel Temperature measurement 'PTemp_C'
+		PanelTemp(PTemp_C,60)
 		'Generic Differential Voltage measurements 'DiffVolt()'
 		ExciteV (Vx1,2500,0)
-		VoltDiff(DiffVolt(1),4,mV2500,1,True,0,_60Hz,1,0)
-		
-		ExciteV (Vx2,2500,0)
-		VoltDiff(DiffVolt(5),4,mV2500,5,True,0,_60Hz,1,0)	
+		VoltDiff(DiffVolt(),4,mV5000,1,True,500,60,Mult(),Offs())
 		'Call Data Tables and Store Data
-		CallTable test_fabio
+		CallTable Table1_test
 	NextScan
 EndProg

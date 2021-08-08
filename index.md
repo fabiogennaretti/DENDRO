@@ -74,7 +74,7 @@ License][cc-by].
       
       [Cabling for dendrometers](dendrometer/NEW_dendrometer_to_data_logger.pdf)
       
-      CR basic code for dendrometer: [on second](dendrometer/My8Dendrometer_onsecond.CR1); [30 minutes interval](dendrometer/My8Dendrometer_30min.CR1)
+      CR basic code for dendrometer: [on second](dendrometer/My4_dendroecologyCR1000X_onsecond.CR1X); [30 minutes interval](dendrometer/My4_dendroecologyCR1000X_30min.CR1X)
       
 9. Dendroecological models
 
