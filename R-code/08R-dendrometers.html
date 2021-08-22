@@ -307,6 +307,9 @@ head(dendro)</code></pre>
 <p>As a first step, you must transform the column containing the date by an usable date in R. Consult the following website to understand how to deal with date/time data in <em>R</em>: <a href="https://www.stat.berkeley.edu/~s133/dates.html" class="uri">https://www.stat.berkeley.edu/~s133/dates.html</a>. You can use the function <em>as.POSIXct</em>.</p>
 <p>A temporal data frame can be created with the function <em>as_tsibble</em> of the <strong>tsibble</strong> package. A temporal data frame has an index variable with inherent ordering from past to present.</p>
 <p>You can visualize the results with the function <em>head</em>, <em>plot(ts())</em> and <em>autoplot {ggplot2}</em>.</p>
+<pre class="r"><code>dendro$TIMESTAMP=as.POSIXct(dendro$TIMESTAMP)
+dendro = as_tsibble(dendro, index = TIMESTAMP)
+head(dendro)</code></pre>
 <pre><code>## # A tsibble: 6 x 14 [30m] &lt;?&gt;
 ##   TIMESTAMP           RECORD BattV_Avg PTemp_C_Avg SEVolt_Avg.1. SEVolt_Avg.2.
 ##   &lt;dttm&gt;               &lt;int&gt;     &lt;dbl&gt;       &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
@@ -319,12 +322,16 @@ head(dendro)</code></pre>
 ## # ... with 8 more variables: SEVolt_Avg.3. &lt;dbl&gt;, SEVolt_Avg.4. &lt;dbl&gt;,
 ## #   SEVolt_Avg.5. &lt;dbl&gt;, SEVolt_Avg.9. &lt;dbl&gt;, SEVolt_Avg.10. &lt;dbl&gt;,
 ## #   SEVolt_Avg.11. &lt;dbl&gt;, SEVolt_Avg.12. &lt;dbl&gt;, SEVolt_Avg.13. &lt;dbl&gt;</code></pre>
-<p><img src="08R-dendrometers_files/figure-html/unnamed-chunk-2-1.png" width="672" /><img src="08R-dendrometers_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<pre class="r"><code>plot(ts(dendro[,5:14]))</code></pre>
+<p><img src="08R-dendrometers_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>autoplot(dendro,SEVolt_Avg.2.)</code></pre>
+<p><img src="08R-dendrometers_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
 </div>
 <div id="unit-conversion" class="section level2">
 <h2>2. Unit conversion</h2>
 <p>Transform the raw data in milliVolt to millimeters. See the “Cabling for dendrometers” document:</p>
 <p><span class="math inline">\(mm = Vout/Vex * 11000 * 0.001\)</span></p>
+<pre class="r"><code>dendro[,5:14]=dendro[,5:14]/2500*11000*0.001</code></pre>
 </div>
 <div id="aggregation-to-daily-values" class="section level2">
 <h2>3. Aggregation to daily values</h2>

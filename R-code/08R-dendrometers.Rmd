@@ -42,7 +42,7 @@ A temporal data frame can be created with the function *as_tsibble* of the **tsi
 
 You can visualize the results with the function *head*, *plot(ts())* and *autoplot {ggplot2}*.
 
-```{r, warning = FALSE, message = FALSE, echo=FALSE}
+```{r, warning = FALSE, message = FALSE}
 dendro$TIMESTAMP=as.POSIXct(dendro$TIMESTAMP)
 dendro = as_tsibble(dendro, index = TIMESTAMP)
 head(dendro)
@@ -56,7 +56,7 @@ Transform the raw data in milliVolt to millimeters. See the "Cabling for dendrom
 
 $mm = Vout/Vex * 11000 * 0.001$
 
-```{r, warning = FALSE, message = FALSE, echo=FALSE}
+```{r, warning = FALSE, message = FALSE}
 dendro[,5:14]=dendro[,5:14]/2500*11000*0.001
 ```
 
