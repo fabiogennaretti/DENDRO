@@ -20,7 +20,7 @@ License][cc-by].
 
 ## Dendroweek
 
-[Course_plan](pdf/ECL7202_Dendroecologie_E21_FINAL.pdf)
+[Course_plan](pdf/Plan de cours ECL7202_DENDROÉCOLOGIE E23.pdf)
       
 ## Themes
 
@@ -82,6 +82,8 @@ License][cc-by].
       
 ## Mini-Projects
 
+To be defined
+<!--
 Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.JPG); [Environmental diversity](pdf/projects/SandSWEI_PCA.jpg)
       
 1. Stem analysis on jack pine (select tree with fire scar; living or death)
@@ -95,6 +97,7 @@ Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.JPG);
 3. Climate sensitivity of boreal trees
 
       [Reference: Chavardes et al. 2021](pdf/projects/Chavardes_FrontiersinPlantScience_2021.pdf)
+-->
 
 ## Conclusion
 
