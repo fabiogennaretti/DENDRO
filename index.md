@@ -80,10 +80,24 @@ License][cc-by].
 
       [Lecture](pdf/09-Dendroecological_models.pdf)
       
-## Mini-Projects
+## Mini-Projects 2023
 
-To be defined
-<!--
+*References on tree mortality*
+
+[Reference: Cailleret et al. 2017](pdf/projects/2023/Cailleret_et_al-2017-Global_Change_Biology.pdf)
+
+[Reference: Gessler et al. 2018](pdf/projects/2023/Gessler_et_al-2018-New_Phytologist.pdf)
+
+*FERLD*
+
+[Figure: Stand volumes at the FERLD](pdf/projects/2023/thumbnail_image002.png)
+
+*Jack Pine in Silvics of North America*
+
+https://www.srs.fs.usda.gov/pubs/misc/ag_654/volume_1/pinus/banksiana.htm
+
+
+<!-- 2020
 Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.JPG); [Environmental diversity](pdf/projects/SandSWEI_PCA.jpg)
       
 1. Stem analysis on jack pine (select tree with fire scar; living or death)
