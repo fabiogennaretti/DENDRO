@@ -50,13 +50,13 @@ License][cc-by].
 
       [Lecture](pdf/05-Post-processing_and_statistics.pdf)
 
-      [Exercise](R-code/05R-Post-processing_and_statistics.html)
+      [Exercise](R-code/05-Post-processing_and_statistics.html)
 
 6. Response functions and transfer functions
 
       [Lecture](pdf/06-Response_transfer_functions.pdf)
 
-      [Exercise](R-code/06R-Response_transfer_functions.html)
+      [Exercise](R-code/06-Response_transfer_functions.html)
       
       Data: [Pivot.SC.crn.csv](data/Pivot.SC.crn.csv)
 
@@ -123,9 +123,15 @@ Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.JPG);
 
 ## Climate Data
 
+[Climate Explorer](https://climexp.knmi.nl/start.cgi)
+
 [Climate NA](https://climatena.ca/)
 
 [Climate NA - Tutorial](https://pressbooks.bccampus.ca/climatemodellingforestadaptation/chapter/topic-3-2-the-use-of-climatena-ap-to-generate-point-and-spatial-climate-data/)
+
+[weathercan ECCC - Tutorial](https://ropensci.org/blog/2018/03/06/weathercan/)
+
+[weathercan ECCC - Data extraction from nearby stations to the FERLD](R-code/historical_weather_data_from_ECCC.R)
 
 ## Conclusion
 
