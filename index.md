@@ -50,13 +50,13 @@ License][cc-by].
 
       [Lecture](pdf/05-Post-processing_and_statistics.pdf)
 
-      [Exercise](R-code/05-Post-processing_and_statistics.html)
+      [Exercise](R-code/05R-Post-processing_and_statistics.html)
 
 6. Response functions and transfer functions
 
       [Lecture](pdf/06-Response_transfer_functions.pdf)
 
-      [Exercise](R-code/06-Response_transfer_functions.html)
+      [Exercise](R-code/06R-Response_transfer_functions.html)
       
       Data: [Pivot.SC.crn.csv](data/Pivot.SC.crn.csv)
 
