@@ -133,6 +133,10 @@ Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.JPG);
 
 [weathercan ECCC - Data extraction from nearby stations to the FERLD](R-code/historical_weather_data_from_ECCC.R)
 
+## Blue Intensity
+
+[BI](https://www.cybis.se/forfun/dendro/helpcoorecorder7/bluechannel80/index.htm)
+
 ## Conclusion
 
 [Questions always asked](pdf/Conclusion.pdf)
