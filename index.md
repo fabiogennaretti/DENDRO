@@ -63,12 +63,14 @@ License][cc-by].
 7. Applications of dendroecology    
       
       [Lecture](pdf/07-Applications_of_dendroecology.pdf)
+      
+      [Lecture of Maxence Martin on old trees and forests](pdf/ECL7010_2023_Vieux_Arbres_Maxence_Martin.pdf)
 
 8. Dendroecology at the intra annual scale    
       
       [Lecture](pdf/08-Dendroecology_at_the_intra-annual_scale.pdf)
       
-      [Lab of Samuel on QWA](pdf/PPT-Cours-dendro-Anatomie.pdf)
+      [Lab of Samuel Bouchut on QWA](pdf/PPT-Cours-dendro-Anatomie.pdf)
       
       [Exercise](R-code/08R-dendrometers.html)
       
