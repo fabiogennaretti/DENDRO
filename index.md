@@ -20,7 +20,7 @@ License][cc-by].
 
 ## Dendroweek
 
-[Course_plan](pdf/Plan_de_cours_ECL7202_DENDROECOLOGIE_E23.pdf)
+[Course_plan](pdf/Plan_de_cours_ECL7202_DENDROECOLOGIE_E24.pdf)
       
 ## Themes
 
