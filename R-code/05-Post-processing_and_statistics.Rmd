@@ -74,10 +74,10 @@ spag.plot(wa082.rwi)
 
 ## 2. Chronology building and descriptive statistics
 
-(2a). Build a mean-value chronology by averaging the rows of the rwi data using a Tukey's biweight robust mean. To achieve this step, use the function *chron* of **dplR**. You can assign a name to the chronology by using the optpion *prefix*. Explore the obtained chronology dataframe and plot the chronology (function *plot*) superimposing a 30-year smoothing spline for visualization (option *add.spline=TRUE, nyrs=30*).
+(2a). Build a mean-value chronology by averaging the rows of the rwi data using a Tukey's biweight robust mean. To achieve this step, use the function *chron* of **dplR**. Explore the obtained chronology dataframe and plot the chronology (function *plot*) superimposing a 30-year smoothing spline for visualization (option *add.spline=TRUE, nyrs=30*).
 
 ```{r, warning = FALSE, message = FALSE, echo=FALSE, results='hide'}
-wa082.crn <- chron(wa082.rwi, prefix="HUR")
+wa082.crn <- chron(wa082.rwi)
 
 str(wa082.crn)
 tail(wa082.crn)
