@@ -57,11 +57,11 @@ head(interseries.cor(wa082))
 mean(interseries.cor(wa082)[, 1])
 ```
 
-(1c). Visualize rapidly the data with **dplR**. Plot the time spans of individual series (function *seg.plot*; segment plot) and visualize all tree-ring width series (option *plot.type="spag"*  of the function *plot*; spaghetti plot). 
+(1c). Visualize rapidly the data with **dplR**. Plot the time spans of individual series (function *seg.plot*; segment plot) and visualize all tree-ring width series (function *spag.plot*; spaghetti plot). 
 
 ```{r, warning = FALSE, message = FALSE}
 seg.plot(wa082)
-plot(wa082, plot.type="spag")
+spag.plot(wa082)
 ```
 
 (1d). Standardize the data detrending each series with a spline that has a frequency response of 50% at a wavelength of 2/3 of each series's length. This step transforms tree-ring widths in indexes. To achieve this step, use the function *detrend* of **dplR** with the option *method="Spline"*. Finally visualize the spaghetti plot of these new data and compare this plot with the previous one obtained in *(1c)*.

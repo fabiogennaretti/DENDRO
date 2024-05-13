@@ -13,13 +13,23 @@
 
 <title>Lab: Post-processing and statistics of dendrochronological series</title>
 
-<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
@@ -36,11 +46,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -53,32 +58,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -89,10 +69,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -109,6 +85,12 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -121,13 +103,12 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -135,16 +116,9 @@ summary {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -247,7 +221,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -258,26 +232,39 @@ div.tocify {
 
 
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
-<h1 class="title toc-ignore">Lab: Post-processing and statistics of dendrochronological series</h1>
+<h1 class="title toc-ignore">Lab: Post-processing and statistics of
+dendrochronological series</h1>
 
 </div>
 
 
-<p><strong>During this exercise, we will standardize tree-ring series, develop a master-chronology, calculate descriptive statistics and produce relevant plots in R.</strong></p>
+<p><strong>During this exercise, we will standardize tree-ring series,
+develop a master-chronology, calculate descriptive statistics and
+produce relevant plots in R.</strong></p>
 <p>We will use the package <strong>dplR</strong>.</p>
 <blockquote>
-<p><strong>Reference</strong>: Bunn AG (2008). A dendrochronology program library in R (dplR). Dendrochronologia, 26(2), 115-124 (URL: <a href="https://doi.org/10.1016/j.dendro.2008.01.002" class="uri">https://doi.org/10.1016/j.dendro.2008.01.002</a>).</p>
+<p><strong>Reference</strong>: Bunn AG (2008). A dendrochronology
+program library in R (dplR). Dendrochronologia, 26(2), 115-124 (URL: <a
+href="https://doi.org/10.1016/j.dendro.2008.01.002"
+class="uri">https://doi.org/10.1016/j.dendro.2008.01.002</a>).</p>
 </blockquote>
 <blockquote>
-<p><strong>Reference</strong>: Bunn AG (2010). Statistical and visual crossdating in R using the dplR library. Dendrochronologia, 28(4), 251-258 (URL: <a href="https://doi.org/10.1016/j.dendro.2009.12.001" class="uri">https://doi.org/10.1016/j.dendro.2009.12.001</a>).</p>
+<p><strong>Reference</strong>: Bunn AG (2010). Statistical and visual
+crossdating in R using the dplR library. Dendrochronologia, 28(4),
+251-258 (URL: <a href="https://doi.org/10.1016/j.dendro.2009.12.001"
+class="uri">https://doi.org/10.1016/j.dendro.2009.12.001</a>).</p>
 </blockquote>
 <div id="data" class="section level2">
 <h2>Data</h2>
-<p>For this exercise, we will use the <em>rwl</em> data of raw ring widths for Pacific silver firs (<em>Abies amabilis</em>) at Hurricane Ridge in the State of Washington, USA. These data include 23 series covering 286 years and are directly available with the <strong>dplR</strong> package as test dataset.</p>
+<p>For this exercise, we will use the <em>rwl</em> data of raw ring
+widths for Pacific silver firs (<em>Abies amabilis</em>) at Hurricane
+Ridge in the State of Washington, USA. These data include 23 series
+covering 286 years and are directly available with the
+<strong>dplR</strong> package as test dataset.</p>
 <p>We will start loading the required packages and the data.</p>
 <pre class="r"><code>library(dplR)
 data(wa082)
@@ -307,31 +294,74 @@ str(wa082)</code></pre>
 ##  $ 712121: num  NA NA NA NA NA NA NA NA NA NA ...
 ##  $ 712122: num  1.47 1.18 1.19 0.82 0.9 0.63 1.08 1.14 0.92 1.06 ...</code></pre>
 </div>
-<div id="standardization-and-descriptive-statistics" class="section level2">
+<div id="standardization-and-descriptive-statistics"
+class="section level2">
 <h2>1. Standardization and descriptive statistics</h2>
-<p>(1a). Use the function <em>summary</em> of <strong>dplR</strong> to compute descriptive statistics of individual tree-ring series. From the results, compute the mean sample length, the mean standard deviation, the mean tree-ring width, and the mean first order autocorrelation.</p>
-<p>(1b). Use the function <em>interseries.cor</em> of <strong>dplR</strong> to compute the individual series correlation against the master chronology and obtain the mean value.</p>
-<p>(1c). Visualize rapidly the data with <strong>dplR</strong>. Plot the time spans of individual series (function <em>seg.plot</em>; segment plot) and visualize all tree-ring width series (option <em>plot.type=“spag”</em> of the function <em>plot</em>; spaghetti plot).</p>
+<p>(1a). Use the function <em>summary</em> of <strong>dplR</strong> to
+compute descriptive statistics of individual tree-ring series. From the
+results, compute the mean sample length, the mean standard deviation,
+the mean tree-ring width, and the mean first order autocorrelation.</p>
+<p>(1b). Use the function <em>interseries.cor</em> of
+<strong>dplR</strong> to compute the individual series correlation
+against the master chronology and obtain the mean value.</p>
+<p>(1c). Visualize rapidly the data with <strong>dplR</strong>. Plot the
+time spans of individual series (function <em>seg.plot</em>; segment
+plot) and visualize all tree-ring width series (function
+<em>spag.plot</em>; spaghetti plot).</p>
 <p><img src="05-Post-processing_and_statistics_files/figure-html/unnamed-chunk-4-1.png" width="672" /><img src="05-Post-processing_and_statistics_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
-<p>(1d). Standardize the data detrending each series with a spline that has a frequency response of 50% at a wavelength of 2/3 of each series’s length. This step transforms tree-ring widths in indexes. To achieve this step, use the function <em>detrend</em> of <strong>dplR</strong> with the option <em>method=“Spline”</em>. Finally visualize the spaghetti plot of these new data and compare this plot with the previous one obtained in <em>(1c)</em>.</p>
+<p>(1d). Standardize the data detrending each series with a spline that
+has a frequency response of 50% at a wavelength of 2/3 of each series’s
+length. This step transforms tree-ring widths in indexes. To achieve
+this step, use the function <em>detrend</em> of <strong>dplR</strong>
+with the option <em>method=“Spline”</em>. Finally visualize the
+spaghetti plot of these new data and compare this plot with the previous
+one obtained in <em>(1c)</em>.</p>
 <p><img src="05-Post-processing_and_statistics_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
-<div id="chronology-building-and-descriptive-statistics" class="section level2">
+<div id="chronology-building-and-descriptive-statistics"
+class="section level2">
 <h2>2. Chronology building and descriptive statistics</h2>
-<p>(2a). Build a mean-value chronology by averaging the rows of the rwi data using a Tukey’s biweight robust mean. To achieve this step, use the function <em>chron</em> of <strong>dplR</strong>. You can assign a name to the chronology by using the optpion <em>prefix</em>. Explore the obtained chronology dataframe and plot the chronology (function <em>plot</em>) superimposing a 30-year smoothing spline for visualization (option <em>add.spline=TRUE, nyrs=30</em>).</p>
+<p>(2a). Build a mean-value chronology by averaging the rows of the rwi
+data using a Tukey’s biweight robust mean. To achieve this step, use the
+function <em>chron</em> of <strong>dplR</strong>. You can assign a name
+to the chronology by using the optpion <em>prefix</em>. Explore the
+obtained chronology dataframe and plot the chronology (function
+<em>plot</em>) superimposing a 30-year smoothing spline for
+visualization (option <em>add.spline=TRUE, nyrs=30</em>).</p>
 <p><img src="05-Post-processing_and_statistics_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>(2b). Compute standard statistics for chronologies with <strong>dplR</strong>. The first step is to correctly assign site, tree, and core IDs to each sample composing the chronology from the rwl data.frame (use the function <em>autoread.ids</em> of <strong>dplR</strong>). Then you compute standard statistics with the function <em>rwi.stats.running</em>. You should specify site, tree, and core IDs of each sample and the window overlap (<em>window.overlap</em>) of contiguous 50 year blocks where the statistic are computed. The result is a data.frame containing the following columns:</p>
-<p><strong>n =</strong> the average number of trees (for each year, a tree needs at least one non-NA core in order to be counted).</p>
-<p><strong>n.tot =</strong> total number of correlations calculated as n.wt + n.bt.</p>
-<p><strong>rbar.tot =</strong> the mean of all the correlations between different cores</p>
-<p><strong>rbar.wt =</strong> the mean of the correlations between series from the same tree over all trees</p>
-<p><strong>rbar.bt =</strong> the mean interseries correlation between all series from different trees</p>
-<p><strong>c.eff =</strong> the effective number of cores (takes into account the number of within-tree correlations in each tree)</p>
-<p><strong>rbar.eff =</strong> the effective signal calculated as rbar.bt / (rbar.wt + (1-rbar.wt) / c.eff)</p>
-<p><strong>eps =</strong> the expressed population signal calculated using the average number of trees as <em>n x rbar.eff / ((n - 1) x rbar.eff + 1)</em></p>
-<p><strong>snr =</strong> the signal to noise ratio calculated using the average number of trees as <em>n x rbar.eff / (1-rbar.eff)</em></p>
-<p>(2c). Compute the subsample signal strength (SSS; <em>n[1+(N-1)rbar]/N[1+(n-1)rbar]</em>) using the function <em>sss</em> of <strong>dplR</strong>.</p>
-<p>(2d). Plot the chronology showing a potential cutoff year based on SSS or on EPS</p>
+<p>(2b). Compute standard statistics for chronologies with
+<strong>dplR</strong>. The first step is to correctly assign site, tree,
+and core IDs to each sample composing the chronology from the rwl
+data.frame (use the function <em>autoread.ids</em> of
+<strong>dplR</strong>). Then you compute standard statistics with the
+function <em>rwi.stats.running</em>. You should specify site, tree, and
+core IDs of each sample and the window overlap (<em>window.overlap</em>)
+of contiguous 50 year blocks where the statistic are computed. The
+result is a data.frame containing the following columns:</p>
+<p><strong>n =</strong> the average number of trees (for each year, a
+tree needs at least one non-NA core in order to be counted).</p>
+<p><strong>n.tot =</strong> total number of correlations calculated as
+n.wt + n.bt.</p>
+<p><strong>rbar.tot =</strong> the mean of all the correlations between
+different cores</p>
+<p><strong>rbar.wt =</strong> the mean of the correlations between
+series from the same tree over all trees</p>
+<p><strong>rbar.bt =</strong> the mean interseries correlation between
+all series from different trees</p>
+<p><strong>c.eff =</strong> the effective number of cores (takes into
+account the number of within-tree correlations in each tree)</p>
+<p><strong>rbar.eff =</strong> the effective signal calculated as
+rbar.bt / (rbar.wt + (1-rbar.wt) / c.eff)</p>
+<p><strong>eps =</strong> the expressed population signal calculated
+using the average number of trees as <em>n x rbar.eff / ((n - 1) x
+rbar.eff + 1)</em></p>
+<p><strong>snr =</strong> the signal to noise ratio calculated using the
+average number of trees as <em>n x rbar.eff / (1-rbar.eff)</em></p>
+<p>(2c). Compute the subsample signal strength (SSS;
+<em>n[1+(N-1)rbar]/N[1+(n-1)rbar]</em>) using the function <em>sss</em>
+of <strong>dplR</strong>.</p>
+<p>(2d). Plot the chronology showing a potential cutoff year based on
+SSS or on EPS</p>
 <pre class="r"><code># Plot cutoff
 yrs &lt;- time(wa082.crn)
 op &lt;- par(no.readonly=TRUE)
@@ -404,7 +434,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -413,6 +443,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
