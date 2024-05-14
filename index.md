@@ -72,15 +72,15 @@ License][cc-by].
       
       [Lecture](pdf/08-Dendroecology_at_the_intra-annual_scale.pdf)
       
-      [Lab of Samuel Bouchut on QWA](pdf/PPT-Cours-dendro-Anatomie.pdf)
+      QWA : [Lab of Samuel Bouchut on QWA](pdf/PPT-Cours-dendro-Anatomie.pdf)
       
-      [Exercise](R-code/08R-dendrometers.html)
+      Dendrometers : [Exercise](R-code/08R-dendrometers.html)
       
-      Data: [Amos_sable_dendrometres_2.dat](dendrometer/Amos_sable_dendrometres_2.dat)
+      Dendrometers : Data - [Amos_sable_dendrometres_2.dat](dendrometer/Amos_sable_dendrometres_2.dat)
       
-      [Cabling for dendrometers](dendrometer/NEW_dendrometer_to_data_logger.pdf)
+      Dendrometers : [Cabling for dendrometers](dendrometer/NEW_dendrometer_to_data_logger.pdf)
       
-      CR basic code for dendrometer: [on second](dendrometer/My4_dendroecologyCR1000X_onsecond.CR1X); [30 minutes interval](dendrometer/My4_dendroecologyCR1000X_30min.CR1X)
+      Dendrometers : CR basic code - [on second](dendrometer/My4_dendroecologyCR1000X_onsecond.CR1X); [30 minutes interval](dendrometer/My4_dendroecologyCR1000X_30min.CR1X)
       
 9. Dendroecological models
 
