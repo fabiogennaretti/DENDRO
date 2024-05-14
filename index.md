@@ -86,7 +86,9 @@ License][cc-by].
       
 9. Dendroecological models
 
-      [Lecture](pdf/09-Dendroecological_models.pdf)
+      Dendroecological models for climate-tree growth relationships : [VS-lite and MAIDEN](pdf/09-Dendroecological_models.pdf)
+      
+      Gap models for stand growth : [Maxence Soubeyrand's thesis project](pdf/presentation_soutenance.pdf)
       
 ## Mini-Projects 2023
 
