@@ -64,7 +64,7 @@ License][cc-by].
       
       [Lecture](pdf/07-Applications_of_dendroecology.pdf)
       
-      [Lecture of Maxence Martin on old trees and forests](pdf/ECL7010_2023_Vieux_Arbres_Maxence_Martin.pdf)
+      From 2023 cours : [Lecture of Maxence Martin on old trees and forests](pdf/ECL7010_2023_Vieux_Arbres_Maxence_Martin.pdf)
 
 8. Dendroecology at the intra annual scale    
       
