@@ -64,7 +64,7 @@ License][cc-by].
       
       [Lecture](pdf/07-Applications_of_dendroecology.pdf)
       
-      [Functioning of old trees](pdf/Cedres_Manon.pdf)
+      The study of tree functioning : [The old cedars of Duparquet](pdf/Cedres_Manon.pdf)
       
       From 2023 cours : [Lecture of Maxence Martin on old trees and forests](pdf/ECL7010_2023_Vieux_Arbres_Maxence_Martin.pdf)
 
