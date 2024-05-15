@@ -22,7 +22,7 @@ mb <- filter(STATIONS,
              prov == "QC",
              interval == "day",
              end >= 2018) %>%
-  select(, -climate_id, -WMO_id, -TC_id)
+  select(-climate_id, -WMO_id, -TC_id)
 mb
 
 ##### Find nearby stations to the FERLD ####
