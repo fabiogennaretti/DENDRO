@@ -76,7 +76,7 @@ License][cc-by].
       
       Dendrometers : [Drought impact with dendrometers](pdf/dendrometers_Jeanny.pdf)
       
-      Dendrometers : [Exercise](R-code/08R-dendrometers.html)
+      Dendrometers : [Exercise](R-code/08-dendrometers.html)
       
       Dendrometers : Data - [Amos_sable_dendrometres_2.dat](dendrometer/Amos_sable_dendrometres_2.dat)
       
