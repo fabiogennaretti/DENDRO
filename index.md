@@ -139,6 +139,8 @@ Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.JPG);
 
 [Climate NA - Tutorial](https://pressbooks.bccampus.ca/climatemodellingforestadaptation/chapter/topic-3-2-the-use-of-climatena-ap-to-generate-point-and-spatial-climate-data/)
 
+[Climate NA - Input File](data/input_test_climateNA.csv)
+
 [weathercan ECCC - Tutorial](https://ropensci.org/blog/2018/03/06/weathercan/)
 
 [weathercan ECCC - Data extraction from nearby stations to the FERLD](R-code/historical_weather_data_from_ECCC.R)
