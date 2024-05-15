@@ -90,8 +90,11 @@ License][cc-by].
       
       Gap models for stand growth : [Maxence Soubeyrand's thesis project](pdf/presentation_soutenance.pdf)
       
-## Mini-Projects 2023
+## Mini-Projects 2024
 
+[Qfield Project FERLD](project/dendro_FERLD.zip)
+
+<!-- 2023
 *References on tree mortality*
 
 [Reference: Cailleret et al. 2017](pdf/projects/2023/Cailleret_et_al-2017-Global_Change_Biology.pdf)
@@ -105,7 +108,7 @@ License][cc-by].
 *Jack Pine in Silvics of North America*
 
 https://www.srs.fs.usda.gov/pubs/misc/ag_654/volume_1/pinus/banksiana.htm
-
+-->
 
 <!-- 2021
 Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.JPG); [Environmental diversity](pdf/projects/SandSWEI_PCA.jpg)
