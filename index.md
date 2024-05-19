@@ -154,13 +154,13 @@ Authier Nord forest experimental site: [Map](pdf/projects/Athier_nord_site.JPG);
 
 ## Some little R tools
 
-# [.wid file](http://www.cybis.se/wiki/index.php?title=.wid)
-# 
-# [R script to create a .wid file handled by Cybis from a .rwl file with multiple series](R-code/2024_create_wid.R)
-# 
-# [.rwl file](http://www.cybis.se/wiki/index.php/Rwl)
-# 
-# [R script to modify final years of time series in .rwl files](R-code/2023_modif_last_rwl.R)
+[.wid file](http://www.cybis.se/wiki/index.php?title=.wid)
+
+[R script to create a .wid file handled by Cybis from a .rwl file with multiple series](R-code/2024_create_wid.R)
+
+[.rwl file](http://www.cybis.se/wiki/index.php/Rwl)
+
+[R script to modify final years of time series in .rwl files](R-code/2023_modif_last_rwl.R)
 
 ## Conclusion
 
