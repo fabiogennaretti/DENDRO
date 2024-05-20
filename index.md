@@ -22,7 +22,7 @@ License][cc-by].
 
 [Course_plan](pdf/Plan_de_cours_ECL7202_DENDROECOLOGIE_E24.pdf)
 
-[New time schedule](pdf/Dendroweek 2024-Time schedule_3.pdf)
+[New time schedule](pdf/Dendroweek_2024-Time_schedule_3.pdf)
       
 ## Themes
 
