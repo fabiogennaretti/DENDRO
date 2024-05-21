@@ -98,6 +98,8 @@ License][cc-by].
 
 [Chavardes 2022 for NCI equations](pdf/projects/Chavardes_2022_cjfr-2022-0114_final.pdf)
 
+<!-- [Longpré 2011](pdf/projects/longpré-et-al-2011.pdf) -->
+
 <!-- 2023
 *References on tree mortality*
 
