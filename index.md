@@ -96,7 +96,7 @@ License][cc-by].
 
 [Qfield Project FERLD](project/dendro_FERLD.zip)
 
-[Chavardes 2022 for NCI equations](/pdf/projects/Chavardes_2022_cjfr-2022-0114_final.pdf)
+[Chavardes 2022 for NCI equations](pdf/projects/Chavardes_2022_cjfr-2022-0114_final.pdf)
 
 <!-- 2023
 *References on tree mortality*
