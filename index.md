@@ -100,6 +100,8 @@ License][cc-by].
 
 [Longpre 2011](pdf/projects/longpre-et-al-2011.pdf)
 
+[Word Template](project/DENDROWEEK_2024_REPORT.docx)
+
 <!-- 2023
 *References on tree mortality*
 
