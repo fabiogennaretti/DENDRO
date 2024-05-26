@@ -74,7 +74,11 @@ License][cc-by].
       
       [Lecture](pdf/08-Dendroecology_at_the_intra-annual_scale.pdf)
       
-      QWA : [Lab of Samuel Bouchut on QWA](pdf/PPT-Cours-dendro-Anatomie.pdf)
+      QWA : [Lab of Samuel Bouchut on QWA](pdf/PPT24-Cours-dendro-Anatomie.pdf)
+      
+      QWA : [Anatomical features](pdf/Wood_anatomical_features.pdf)
+      
+      QWA : [Example of anatomical report](pdf/Rapport_XyloPal_Bouchut_Baccati_Morel.pdf)
       
       Dendrometers : [Drought impact with dendrometers](pdf/dendrometers_Jeanny.pdf)
       
